@@ -1,0 +1,9 @@
+<xpcConfig>
+	<entityType name="deleteEmployee">
+		<description>Delete Employee</description>
+		<method>
+			<name>delete</name>
+			<class>com.tooltwist.ttdemo.xds.DeleteEmployeeXDS</class>
+		</method>	
+	</entityType>
+</xpcConfig>

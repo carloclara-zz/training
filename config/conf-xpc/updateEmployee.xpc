@@ -1,0 +1,9 @@
+<xpcConfig>
+	<entityType name="updateEmployee">
+		<description>Update Employee</description>
+		<method>
+			<name>update</name>
+			<class>com.tooltwist.ttdemo.xds.UpdateEmployeeXDS</class>
+		</method>	
+	</entityType>
+</xpcConfig>

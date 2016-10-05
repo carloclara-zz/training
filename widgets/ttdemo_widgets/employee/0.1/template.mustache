@@ -1,0 +1,152 @@
+<div class="placeholder">{{scopes.placeholder}}</div>
+
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<br>
+<div class="panel panel-primary">
+<div class="panel-heading">Employee Table</div>
+<div class="panel-body">
+	<table class="table table-striped">
+		
+		<tr>
+			<th>Employee ID</th>
+			<th><span>Name</span></th>
+			<th>Address</th>
+			<th>Phone Number</th>
+			<th>Position</th>
+			<th>Department</th>
+			<th>Action</th>
+		</tr>
+	  
+		{{#scopes.employeeList}}
+		<tr id="tr{{employeeId}}">
+			<td>{{employeeId}}</td>
+			<td class="name">{{name}}</td>
+			<td class="address">{{address}}</td>
+			<td class="phone">{{phoneNumber}}</td>
+			<td class="position">{{position}}</td>
+			<td class="department">{{department}}</td>
+			<td>
+			<div class="btn-group">			  
+			  <button type="button" class="btn btn-warning glyphicon glyphicon-edit" data-toggle="modal" data-target="#updateModal" uuid="{{employeeId}}" title="Update this record?"></button>
+			  <button type="button" class="btn btn-danger glyphicon glyphicon-remove delete" empId="{{employeeId}}" title="Remove this record?"></button>
+			</div>
+			</td>		
+		</tr>
+		{{/scopes.employeeList}}
+	</table>
+	<button type="button" class="btn btn-success" data-toggle="modal" data-target="#addModal"><strong>ADD NEW RECORD</strong></button>
+</div>
+</div>	
+	
+<!-- Modal -->
+  <div class="modal fade" id="addModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Create New Employee</h4>
+        </div>
+        <div class="modal-body">
+          <form class="form-horizontal">		    
+		    <div class="form-group">
+		      <label class="control-label col-sm-2" for="name">Name:</label>
+		      <div class="col-sm-10">
+		        <input type="text" class="form-control mandatory" id="name">
+		      </div>
+		    </div>
+		    <div class="form-group">
+		      <label class="control-label col-sm-2" for="add">Address:</label>
+		      <div class="col-sm-10">
+		        <input type="text" class="form-control mandatory" id="add">
+		      </div>
+		    </div>
+		    <div class="form-group">
+		      <label class="control-label col-sm-2" for="phn">Phone Number:</label>
+		      <div class="col-sm-10">
+		        <input type="text" class="form-control mandatory" id="phn">
+		      </div>
+		    </div>
+		    <div class="form-group">
+		      <label class="control-label col-sm-2" for="pos">Position:</label>
+		      <div class="col-sm-10">
+		        <input type="text" class="form-control mandatory" id="pos">
+		      </div>
+		    </div>
+		    <div class="form-group">
+		      <label class="control-label col-sm-2" for="dept">Department:</label>
+		      <div class="col-sm-10">
+		        <input type="text" class="form-control mandatory" id="dept">
+		      </div>
+		    </div>	
+		   
+		  </form>
+        </div>
+        <div class="modal-footer">
+         	<button class="btn btn-success" id="btnSave">Save</button>
+          	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="updateModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Update Employee Info</h4>
+        </div>
+        <div class="modal-body">
+          <form class="form-horizontal">		    
+		    <div class="form-group">
+		      <label class="control-label col-sm-2" for="ename">Name:</label>
+		      <div class="col-sm-10">
+		        <input type="text" class="form-control mandatory" id="ename">
+		      </div>
+		    </div>
+		    <div class="form-group">
+		      <label class="control-label col-sm-2" for="eadd">Address:</label>
+		      <div class="col-sm-10">
+		        <input type="text" class="form-control mandatory" id="eadd">
+		      </div>
+		    </div>
+		    <div class="form-group">
+		      <label class="control-label col-sm-2" for="ephn">Phone Number:</label>
+		      <div class="col-sm-10">
+		        <input type="text" class="form-control mandatory" id="ephn">
+		      </div>
+		    </div>
+		    <div class="form-group">
+		      <label class="control-label col-sm-2" for="epos">Position:</label>
+		      <div class="col-sm-10">
+		        <input type="text" class="form-control mandatory" id="epos">
+		      </div>
+		    </div>
+		    <div class="form-group">
+		      <label class="control-label col-sm-2" for="edept">Department:</label>
+		      <div class="col-sm-10">
+		        <input type="text" class="form-control mandatory" id="edept">
+		      </div>
+		    </div>	
+		    
+		  </form>
+        </div>
+        <div class="modal-footer">
+        	<button class="btn btn-success" id="btnUpdate">Update</button>
+          	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+   <input type="hidden" id="hidUuid">

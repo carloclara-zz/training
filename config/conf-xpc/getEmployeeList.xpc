@@ -1,9 +1,9 @@
 <xpcConfig>
-	<entityType name="getPlaceholder">
-		<description>Get Placeholder</description>
+	<entityType name="getEmployeeList">
+		<description>Get Employee List</description>
 		<method>
 			<name>get</name>
-			<class>com.tooltwist.ttdemo.xds.GetPlaceholderXDS</class>
+			<class>com.tooltwist.ttdemo.xds.GetEmployeeListXDS</class>
 		</method>	
 	</entityType>
 </xpcConfig>

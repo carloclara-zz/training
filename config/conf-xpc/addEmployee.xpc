@@ -1,0 +1,9 @@
+<xpcConfig>
+	<entityType name="addEmployee">
+		<description>Add Employee</description>
+		<method>
+			<name>add</name>
+			<class>com.tooltwist.ttdemo.xds.AddEmployeeXDS</class>
+		</method>	
+	</entityType>
+</xpcConfig>

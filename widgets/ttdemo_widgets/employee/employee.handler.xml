@@ -1,0 +1,4 @@
+<requestHandler>
+	<class>com.tooltwist.ttdemo.requestHandlers.EmployeeRequestHandler</class>
+	<description>Employee Request Handler</description>
+</requestHandler>
